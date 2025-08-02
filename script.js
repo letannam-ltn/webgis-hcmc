@@ -1,8 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // Hiển thị bản đồ với dữ liệu đã cấu hình sẵn từ các input ẩn
-  if (typeof OpenLayers3Map !== 'undefined') {
-    OpenLayers3Map.load();
-  } else {
-    console.error('Không tìm thấy OpenLayers3Map. Kiểm tra đường dẫn tới OpenLayers3Map.js.');
-  }
-});
+source: new ol.source.TileWMS({
+  url: 'https://0850a0cc80f9.ngrok-free.app/geoserver/webgis_hcmc/wms',
+  params: {
+    'LAYERS': 'webgis_hcmc:tp.hcm_phuongxa', // thay bằng tên lớp bạn đang dùng
+    'TILED': true
+  },
+  serverType: 'geoserver'
+})
+
