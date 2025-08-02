@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(145deg, #e5e7eb 0%, #d1d5db 100%);
+  color: #1f2a44;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+header {
+  background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  padding: 1.8rem 2rem;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+#container {
+  display: flex;
+  height: calc(100vh - 90px);
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+#toolbar {
+  width: 320px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#toolbar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+#toolbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#toolbar li {
+  margin-bottom: 1.8rem;
+}
+
+#toolbar label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.6rem;
+  color: #1f2a44;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#toolbar select,
+#toolbar input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.9);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+#toolbar select:focus,
+#toolbar input[type="text"]:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+  background: white;
+}
+
+#toolbar button {
+  margin-top: 0.75rem;
+  margin-right: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+#toolbar button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  background: linear-gradient(90deg, #4338ca 0%, #6d28d9 100%);
+}
+
+#toolbar button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.2);
+}
+
+#mapContainer {
+  flex-grow: 1;
+  position: relative;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#map:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.ol-toggle-options {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 0.75rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.ol-toggle-options:hover {
+  background: rgba(17, 24, 39, 0.95);
+  transform: scale(1.05);
+}
+
+.ol-toggle-options a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ol-toggle-options a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(4px);
+}
+
+#info {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #4b5563;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+#info:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
